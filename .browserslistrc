@@ -1,0 +1,3 @@
+defaults
+last 2 versions
+not < 1.2%

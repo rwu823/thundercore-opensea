@@ -1,0 +1,36 @@
+{
+  "devDependencies": {
+    "@ts-mono/base": "rwu823/ts-mono#pkg/ts-base",
+    "@ts-mono/dev-react": "rwu823/ts-mono#pkg/dev-react",
+    "@types/react-paginate": "7.1.1",
+    "type-fest": "2.5.4",
+    "typehole": "1.7.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix",
+      "stylelint --fix"
+    ]
+  },
+  "scripts": {
+    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "test:ci": "jest --ci --no-cache --bail --changedSince=origin/main --maxWorkers=4",
+    "rm-pkg": "rm -rf node_modules packages/*/node_modules yarn.lock",
+    "transcrypt": "curl -s https://raw.githubusercontent.com/elasticdog/transcrypt/master/transcrypt | bash -s --",
+    "lint": "eslint --ignore-path .gitignore --ext .ts,.tsx,.js,.mjs",
+    "prepare": "husky install & browserslist --update-db",
+    "build": "rm -rf out node_modules/.tsbuildinfo && next build && next export && touch out/.nojekyll"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "1.7.2",
+    "@emotion/react": "11.6.0",
+    "@emotion/styled": "11.6.0",
+    "framer-motion": "5.3.1",
+    "isomorphic-unfetch": "3.1.0",
+    "jotai": "1.4.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-paginate": "8.0.0",
+    "react-query": "3.33.2"
+  }
+}
